@@ -6,6 +6,8 @@
 
 
 #include <iostream>
+// iomanip lets you use setw() and setprecision() and fixed
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -17,7 +19,7 @@ int main() {
     double tax_amount; // in USD
     double total;      // $, meal + tax
     // Input
-    meal_name = "chicken sandwich";
+    meal_name = "Chicken Sandwich";
     meal_price = 5.99;
     tax_rate = 0.08;    // 8%
 
@@ -28,12 +30,17 @@ int main() {
     total      = meal_price + tax_amount;
 
     // Output
-    string line = "-----------------------------------";
+    // todo: print like a receipt
+    string line = "===================================";
     cout << line << endl;
-    cout << meal_name << " " << meal_price << endl;
-    cout << "tax: " << " " << tax_amount << endl;
+    
+    // set width of columns and set 2 decimal places
+
+    cout << setprecision(2) << fixed;
+    cout << setw(20) << meal_name << setw(10) << meal_price << endl;
+    cout << setw(20) << "tax: " << setw(10) << tax_amount << endl;
     cout << line << endl;
-    cout << "Total: " << total << endl;
+    cout << setw(20) << "Total: " << setw(10) << total << endl;
     cout << "Thank You Come Again" << endl << endl;
 
     return 0;
