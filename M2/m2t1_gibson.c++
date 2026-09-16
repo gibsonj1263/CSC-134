@@ -1,5 +1,5 @@
 // CSC 134
-// M2Lab1 - Product Sales
+// M2T1 - Product Sales
 // Gibson
 // 9/9/26
 
