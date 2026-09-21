@@ -28,9 +28,13 @@ int main() {
     cin >> wid2;
 
     // Processing: Find the area
-    
+    area1 = leng1 * wid1;
+    area2 = leng2 * wid2;
 
     // Output: Print the area
+    cout << "====================================================" << endl;
+    cout << "The area of the first rectangle is: " << area1 << " sq. ft." << endl;
+    cout << "The area of the second rectangle is: " << area2 << " sq. ft." << endl;
 
     return 0; // no errors
 }
