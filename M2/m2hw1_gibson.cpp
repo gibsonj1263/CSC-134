@@ -22,7 +22,7 @@ int main() {
     // Run only the questions you finish by removing the // 
     //question1();
     //question2();
-    question3();
+    //question3();
     //question4();
 }
 
@@ -31,7 +31,7 @@ void question1() {
     
     // declare variables
     string account_holder_name;
-    const double account_number = 1357908642;
+    const int account_number = 1357908642;
     double starting_account_balance;
     double deposit;
     double withdrawl;
@@ -39,7 +39,7 @@ void question1() {
 
     // input 
     cout << "Enter Your Name: ";
-    cin >> account_holder_name;
+    getline(cin, account_holder_name);
     cout << "Enter Your Starting Account Balance: $";
     cin >> starting_account_balance;
     cout << "How much cash would you like to deposit: $";
@@ -54,7 +54,7 @@ void question1() {
     cout << setprecision(2) << fixed;
     cout << "----------------------------------" << endl << endl;
     cout << account_holder_name << endl;
-    cout << account_number << endl;
+    cout << "Account Number: " << account_number << endl;
     cout << endl;
     cout << "Your Final Account Balance is: $" << final_account_balance << endl;
 
@@ -109,15 +109,51 @@ void question3() {
 
     // Declare Variables
     int pizzas_ordered;
+    int slices_per_pizza;
+    int visitors;
+    int total_slices;
+    int slices_eaten;
+    int left_over_slices;
 
     // Input
+    cout << "====================================" << endl;
+    cout << "Welcome to Snake's Pizza Party" << endl << endl;
+    cout << "How many pizzas would you like to order?: ";
+    cin >> pizzas_ordered;
+    cout << "How many slices per pizza?: ";
+    cin >> slices_per_pizza;
+    cout << "How many visitors are comming to the party?: ";
+    cin >> visitors;
+
 
     // Processing
+    total_slices = pizzas_ordered * slices_per_pizza;
+    slices_eaten = visitors * 3;
+    left_over_slices = total_slices - slices_eaten;
 
     // Output
+    cout << "----------------------------------------" << endl;
+    cout << "There are " << left_over_slices << " slices of pizza left." << endl;
 
 }
 
 void question4() {
-    cout << "Question 4 goes here" << endl;
+    cout << "FTCC Trojans Cheering Program" << endl;
+
+    // Declare Variables
+    string Lets_Go = "Lets Go";
+    string school = " FTCC";
+    string team = " Trojans";
+    string cheer_1, cheer_2;
+
+    // Processing 
+    cheer_1 = Lets_Go + school;
+    cheer_2 = Lets_Go + team;
+
+    // Output
+    cout << cheer_1 << endl;
+    cout << cheer_1 << endl;
+    cout << cheer_1 << endl;
+    cout << cheer_2 << endl;
+
 }
