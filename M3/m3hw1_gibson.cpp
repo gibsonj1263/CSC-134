@@ -84,9 +84,8 @@ void question2() {
     cout << "Receipt Calculator" << endl;
 
     // Input: Get the meal price and whether it is for here or to go.
-    cout << "Please enter the name and price of your meal." << endl;
-    cout << "Meal Name: ";
-    getline(cin, meal_name);
+    cout << "Please enter the price of your meal." << endl;
+    cout << "Chicken Sandwich meal" << endl;
     cout << "Meal price: ";
     cin >> meal_price;
     cout << "Please enter 1 if the order is dine in, 2 if it is to go: ";
@@ -110,7 +109,11 @@ void question2() {
     total = meal_price * tax_amount;
 
     // Output
-
+    cout << setprecision(2) << fixed;
+    cout << setw(20) << meal_name << setw(10) << meal_price << endl;
+    cout << setw(20) << "tax: " << setw(10) << tax_amount << endl;
+    cout << setw(20) << "Total: " << setw(10) << total << endl;
+    cout << "Thank You Come Again" << endl << endl;
 
 }
 
