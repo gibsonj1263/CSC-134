@@ -6,6 +6,7 @@ Gibson
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 void question1();
@@ -48,8 +49,9 @@ int main() {
 // Like a dictionary -- name, and then all the code
 void question1() {
     // declare variables
-    string yes, no;
     string answer;
+    string answer_yes = "yes";
+    string answer_no = "no";
 
     cout << "Chat Bot Program" << endl << endl;
 
@@ -58,10 +60,10 @@ void question1() {
     cin >> answer;
 
     // calculations
-    if (answer == yes) {
+    if (answer == answer_yes) {
         cout << "That's great! I'm sure we'll get along.";
     }
-    else if (answer == no) {
+    else if (answer == answer_no) {
         cout << "Well, maybe you'll learn to like me later.";
     }
     else {
@@ -70,8 +72,29 @@ void question1() {
 }
 
 void question2() {
-    int age = 30;
+    // Declare variables
+    double meal_price;
+    int choice;
+    double tax;
+    double tip;
+    double total;
+
     cout << "Receipt Calculator" << endl;
+
+    // Get the meal price and whether it is for here or to go.
+    cout << "Please enter the price of your meal." << endl;
+    cout << "Meal price: ";
+    cin >> meal_price;
+    cout << "Please enter 1 if the order is dine in, 2 if it is to go: ";
+    cin >> choice;
+
+    // calculations
+    if (choice == 1) {
+        cout << "You have chosen to dine in." << endl;
+    }
+else if (choice == 2) {
+    cout << "You've ordered you meal to go." << endl;
+    }
 }
 
 void question3() {
