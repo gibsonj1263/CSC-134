@@ -73,28 +73,45 @@ void question1() {
 
 void question2() {
     // Declare variables
+    string meal_name;
     double meal_price;
     int choice;
-    double tax;
+    double tax_rate;
+    double tax_amount;
     double tip;
     double total;
 
     cout << "Receipt Calculator" << endl;
 
-    // Get the meal price and whether it is for here or to go.
-    cout << "Please enter the price of your meal." << endl;
+    // Input: Get the meal price and whether it is for here or to go.
+    cout << "Please enter the name and price of your meal." << endl;
+    cout << "Meal Name: ";
+    getline(cin, meal_name);
     cout << "Meal price: ";
     cin >> meal_price;
     cout << "Please enter 1 if the order is dine in, 2 if it is to go: ";
     cin >> choice;
 
-    // calculations
+    // choice calculations
     if (choice == 1) {
         cout << "You have chosen to dine in." << endl;
+        tip = 0.15;
     }
-else if (choice == 2) {
+    else if (choice == 2) {
     cout << "You've ordered you meal to go." << endl;
     }
+    else {
+        cout << "Invalid choice. Please type either 1 or 2." << endl;
+    }
+
+    // meal tax and tip calculations
+    tax_rate = 0.08;
+    tax_amount = meal_price * tax_rate;
+    total = meal_price * tax_amount;
+
+    // Output
+
+
 }
 
 void question3() {
