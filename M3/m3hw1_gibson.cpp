@@ -73,45 +73,53 @@ void question1() {
 
 void question2() {
     // Declare variables
-    string meal_name;
-    double meal_price;
+    string meal_name;  // ex. chicken sandwich 
+    double meal_price; // $
     int choice;
-    double tax_rate;
-    double tax_amount;
     double tip;
-    double total;
+    double tip_percentage;
+    double tax_rate;   // percent
+    double tax_amount; // in USD
+    double total;      // $, meal + tax
 
-    cout << "Receipt Calculator" << endl;
-
-    // Input: Get the meal price and whether it is for here or to go.
-    cout << "Please enter the price of your meal." << endl;
-    cout << "Chicken Sandwich meal" << endl;
-    cout << "Meal price: ";
+    cout << "Receipt Calculator Program" << endl << endl;
+    // Input
+    meal_name = "Chicken Sandwich";
+    cout << "Enter the price of your meal here: $";
     cin >> meal_price;
-    cout << "Please enter 1 if the order is dine in, 2 if it is to go: ";
+    cout << "Is your order dine in or take away? Type 1 or 2. ";
     cin >> choice;
 
-    // choice calculations
     if (choice == 1) {
-        cout << "You have chosen to dine in." << endl;
-        tip = 0.15;
+        tip_percentage = 0.15;
     }
     else if (choice == 2) {
-    cout << "You've ordered you meal to go." << endl;
+        tip_percentage = 0;
     }
     else {
-        cout << "Invalid choice. Please type either 1 or 2." << endl;
+        cout << "Invalid Choice, Please type either 1 or 2.";
     }
 
-    // meal tax and tip calculations
+
+
+    // Processing
     tax_rate = 0.08;
     tax_amount = meal_price * tax_rate;
-    total = meal_price * tax_amount;
+    tip = meal_price * tip_percentage;
+    total      = meal_price + tax_amount + tip;
 
     // Output
+    // todo: print like a receipt
+    string line = "===================================";
+    cout << line << endl;
+    
+    // set width of columns and set 2 decimal places
+
     cout << setprecision(2) << fixed;
     cout << setw(20) << meal_name << setw(10) << meal_price << endl;
     cout << setw(20) << "tax: " << setw(10) << tax_amount << endl;
+    cout << setw(20) << "tip: " << setw(10) << tip << endl;
+    cout << line << endl;
     cout << setw(20) << "Total: " << setw(10) << total << endl;
     cout << "Thank You Come Again" << endl << endl;
 
