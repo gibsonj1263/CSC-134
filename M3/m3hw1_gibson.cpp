@@ -6,6 +6,8 @@ Gibson
 */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <iomanip>
 using namespace std;
 
@@ -151,12 +153,29 @@ void question3() {
     else {
         cout << "Invalid choice. Please type 1 or 2.";
     }
-
-
-    
-
 }
 
 void question4() {
     cout << "Math Practice" << endl;
+
+    srand(time(0));
+
+    int num1 = (rand() % 9) + 1;
+    int num2 = (rand() % 9) + 1;
+    int total = num1 + num2;
+    int answer;
+
+    // ask the question
+    cout << "What is " << num1 << " + " << num2 << " = " << endl;
+    cin >> answer;
+
+    if (total == answer) {
+        cout << "You've Answered Correctly. Good Job!!";
+    }
+    else {
+        cout << "You've Answered Incorrectly. Try Again.";
+    }
+
+
+
 }
