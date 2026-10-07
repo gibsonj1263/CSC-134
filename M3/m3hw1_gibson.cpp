@@ -14,6 +14,7 @@ void question2();
 void question3();
 void question4();
 
+
 int main() {
     cout << "Example of HW" << endl;
     cout << "1. Chat Bot Program" << endl;
@@ -126,7 +127,34 @@ void question2() {
 }
 
 void question3() {
+
+
     cout << "Choose Your Own Adventure" << endl;
+
+    int choice;
+    
+    // Adventure menu
+    cout << "Knight vs. Dragon" << endl;
+    cout << "1) Slash the dragon with your sword" << endl;
+    cout << "2) Walk away" << endl;
+    cout << "? ";
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "You Have Slayed The Dragon!!!" << endl;
+        cout << "NICE JOB";
+    }
+    else if (choice == 2) {
+        cout << "You Have Walked Away. The Princess is Dead." << endl;
+        cout << "YOU LOSE!!!";
+    }
+    else {
+        cout << "Invalid choice. Please type 1 or 2.";
+    }
+
+
+    
+
 }
 
 void question4() {
