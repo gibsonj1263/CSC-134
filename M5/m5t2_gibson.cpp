@@ -8,28 +8,36 @@ Gibsonj
 #include <iostream>
 using namespace std;
 
-// void function 
-void print_answer_line();
-
-// value returning functions
-int num_squared(int square);
+// Prototypes: Declare functions here, define them under main
+int square(int num);
+void printAnswerLine(int number, int squared);
 
 int main() {
-    int square;
-    int answer = num_squared(square);
-
-
-    return 0;
-}
-
-int num_squared(int square) {
-    square ^= 2;
-    return square;
-}
-
-void print_answer_line() {
-    for (int i = 1; i <=10; i++) {
-        cout << i << endl;
+    cout << "Table of Squares Program" << endl;
+    bool done = true;
+    while (done==false) {
+        cout << "Keep Going...";
+    } 
+    bool is_valid = false;
+    while (false==is_valid) {
+        for (int i = 1; i <= 10; i++) {
+            cout << i << endl;
+            is_valid = true;
+        }
     }
 
+}
+
+// Define functions here.
+int square(int num) {
+    // Does the math -- input, an integer, output, that integer squared
+
+    return num * num;
+}
+
+void printAnswerLine(int number, int squared) {
+    // Print one line of the table of squares.
+    // example output:
+    // 3        9
+    cout << number << " squared is " << squared << endl;
 }
