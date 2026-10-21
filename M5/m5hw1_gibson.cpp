@@ -149,6 +149,25 @@ void question3() {
 }
 void question4() {
     cout << "Welcome to the Geometry Calculator Program" << endl;
+    cout << "--------------------------------------------" << endl;
+    // variables
+    double area, radius, width, length, base, height;
+    const double pi = 3.14;
+    // Display a menu
+    cout << "1. Calculate the Area of a Circle" << endl;
+    cout << "2. Calculate the Area of a Rectangle" << endl;
+    cout << "3. Calculate the Area of a Triangle" << endl;
+    int choice;
+    cin >> choice;
+
+    if (1==choice) {
+        cout << "Enter the radius of your circle: ";
+        cin >> radius;
+        // calculation of the radius given
+        
+
+    }
+
 }
 void question5() {
     cout << "Welcome to the Distance Traveled Calculator Program" << endl;
