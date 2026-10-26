@@ -6,6 +6,7 @@ Gibsonj
 */
 
 #include <iostream>
+#include <cmath>
 #include <iomanip>
 using namespace std;
 
@@ -152,7 +153,7 @@ void question4() {
     cout << "--------------------------------------------" << endl;
     // variables
     double area, radius, width, length, base, height;
-    const double pi = 3.14;
+    const double pi = 3.14159;
     // Display a menu
     cout << "1. Calculate the Area of a Circle" << endl;
     cout << "2. Calculate the Area of a Rectangle" << endl;
@@ -163,9 +164,32 @@ void question4() {
     if (1==choice) {
         cout << "Enter the radius of your circle: ";
         cin >> radius;
-        // calculation of the radius given
+        // calculation of the cirlc using the radius given
+        double Area = pi * pow(radius, 2);
         
+        // Output: display answer to the user
+        cout << "The Area of your Circle" << " ≈ "<< Area << endl;
+    }
+    else if (2==choice) {
+        cout << "Enter the Length of your Rectangle: ";
+        cin >> length;
+        cout << "Enter the Width of your Rectangle: ";
+        cin >> width;
 
+        // calculation of the rectangle using the length and width given
+        double Area = width * length;
+
+        // Output: display answer to the user
+        cout << "The Area of your Rectangle" << " = " << Area << endl;
+    }
+    else if (3==choice) {
+        cout << "Enter the Height of your Triangle: ";
+        cin >> height;
+        cout << "Enter the Base of your Triangle: ";
+        cin >> base;
+
+        // calculation of the triangle using the height and base given
+        double Area = (height * base) / 2;
     }
 
 }
