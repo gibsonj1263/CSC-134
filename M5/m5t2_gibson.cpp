@@ -1,7 +1,7 @@
 /*
 CSC 134
 M5T2 - More Practice with Functions
-Gibsonj
+Gibsonj and GPT-6 Luna
 10/21/26
 */
 
@@ -14,16 +14,9 @@ void printAnswerLine(int number, int squared);
 
 int main() {
     cout << "Table of Squares Program" << endl;
-    bool done = true;
-    while (done==false) {
-        cout << "Keep Going...";
-    } 
-    bool is_valid = false;
-    while (false==is_valid) {
-        for (int i = 1; i <= 10; i++) {
-            cout << i << endl;
-            is_valid = true;
-        }
+    for (int i = 1; i <= 10; i++) {
+        int squared = square(i);
+        printAnswerLine(i, squared);
     }
 
 }
