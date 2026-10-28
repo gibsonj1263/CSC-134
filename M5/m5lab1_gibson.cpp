@@ -22,6 +22,8 @@ void choice_front_door();
 void choice_back_door();
 void choice_hallway();
 void choice_go_home();
+void choice_upstairs();
+void choice_basement();
 // TODO: add your new prototypes here
 
 int main() {
@@ -154,6 +156,30 @@ void choice_hallway() {
     cout << "You duck into the alcove just in time." << endl;
     cout << "The zombies shuffle past without noticing you." << endl;
     cout << "When the hallway is clear, you sneak toward a staircase deeper in the mansion." << endl;
+    cout << "Do you:" << endl;
+    cout << "1. Climb the stairs to the upper floor" << endl;
+    cout << "2. Descend into the basement" << endl;
+    cout << "Choose: ";
+
+    int nextChoice = 0;
+    cin >> nextChoice;
+    if (cin.fail()) {
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      cout << "That's not a valid choice, please try again." << endl;
+      choice_hallway();
+      return;
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    if (1 == nextChoice) {
+      choice_upstairs();
+    } else if (2 == nextChoice) {
+      choice_basement();
+    } else {
+      cout << "That's not a valid choice, please try again." << endl;
+      choice_hallway();
+    }
   } else if (2 == choice) {
     cout << "The zombies block your way and surround you." << endl;
     cout << "You are trapped inside the mansion with the undead." << endl;
@@ -170,4 +196,66 @@ void choice_go_home() {
   cout << "The nightmare is over for now, but the zombies are still trapped inside." << endl;
 }
 
-// TODO: add your new function definitions here
+void choice_upstairs() {
+  cout << "You climb the stairs into a long upstairs hallway lined with cracked portraits." << endl;
+  cout << "A soft voice whispers from behind a bedroom door, but the floorboards groan under your feet." << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Open the bedroom door and investigate the voice" << endl;
+  cout << "2. Run back down the stairs and leave the mansion" << endl;
+  cout << "Choose: ";
+
+  int choice = 0;
+  cin >> choice;
+  if (cin.fail()) {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "That's not a valid choice, please try again." << endl;
+    choice_upstairs();
+    return;
+  }
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  if (1 == choice) {
+    cout << "You open the door and find a dusty nursery filled with broken toys." << endl;
+    cout << "In the center of the room sits a rusted music box, still playing by itself." << endl;
+    cout << "The melody fades, and the room goes silent. Something is waiting in the dark." << endl;
+    cout << "You hear the zombies climbing the stairs behind you and realize the mansion has found you." << endl;
+  } else if (2 == choice) {
+    choice_go_home();
+  } else {
+    cout << "That's not a valid choice, please try again." << endl;
+    choice_upstairs();
+  }
+}
+
+void choice_basement() {
+  cout << "You descend into the basement, where the air is cold and the walls drip with black water." << endl;
+  cout << "At the far end of the room, a steel door stands ajar, and a lantern flickers inside." << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Step through the steel door" << endl;
+  cout << "2. Sprint back upstairs and run away" << endl;
+  cout << "Choose: ";
+
+  int choice = 0;
+  cin >> choice;
+  if (cin.fail()) {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "That's not a valid choice, please try again." << endl;
+    choice_basement();
+    return;
+  }
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  if (1 == choice) {
+    cout << "You push through the iron door and find a hidden tunnel carved into the earth." << endl;
+    cout << "The tunnel leads outside, and you burst into the stormy night gasping for breath." << endl;
+    cout << "You escape the mansion, but the sound of the zombies fades only slowly behind you." << endl;
+    cout << "For tonight, the mansion loses its grip on you." << endl;
+  } else if (2 == choice) {
+    choice_go_home();
+  } else {
+    cout << "That's not a valid choice, please try again." << endl;
+    choice_basement();
+  }
+}
