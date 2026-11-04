@@ -158,41 +158,70 @@ void question4() {
     cout << "1. Calculate the Area of a Circle" << endl;
     cout << "2. Calculate the Area of a Rectangle" << endl;
     cout << "3. Calculate the Area of a Triangle" << endl;
+    cout << "4. Quit" << endl;
     int choice;
+    cout << "Enter your choice (1-4): ";
     cin >> choice;
 
     if (1==choice) {
-        cout << "Enter the radius of your circle: ";
+        cout << "Enter the Circle's radius: ";
         cin >> radius;
         // calculation of the cirlc using the radius given
         double Area = pi * pow(radius, 2);
         
         // Output: display answer to the user
-        cout << "The Area of your Circle" << " ≈ "<< Area << endl;
+        cout << "The Area is " << Area << endl;
     }
     else if (2==choice) {
-        cout << "Enter the Length of your Rectangle: ";
+        cout << "Enter the Rectangle's length: ";
         cin >> length;
-        cout << "Enter the Width of your Rectangle: ";
+        cout << "Enter the Rectangle's width: ";
         cin >> width;
 
         // calculation of the rectangle using the length and width given
         double Area = width * length;
 
         // Output: display answer to the user
-        cout << "The Area of your Rectangle" << " = " << Area << endl;
+        cout << "The Area is " << Area << endl;
     }
     else if (3==choice) {
-        cout << "Enter the Height of your Triangle: ";
+        cout << "Enter the Triangle's height: ";
         cin >> height;
-        cout << "Enter the Base of your Triangle: ";
+        cout << "Enter the Triangle's base: ";
         cin >> base;
 
         // calculation of the triangle using the height and base given
         double Area = (height * base) / 2;
+
+        // Output: display answer to user.
+        cout << "The Area is " << Area << endl;
+    }
+    else if (4==choice) {
+        cout << "Bye!" << endl;
+    }
+    else {
+        cout << "Not a valid choice." << endl;
     }
 
 }
 void question5() {
     cout << "Welcome to the Distance Traveled Calculator Program" << endl;
+    cout << "-----------------------------------------------------" << endl;
+    // Variables 
+    int speed, time, distance;
+
+    // ask user for speed and time
+    cout << "What is the speed of the vehicle in mph? ";
+    cin >> speed;
+    cout << "How many hours has it traveled? ";
+    cin >> time;
+
+    // calculation for distance
+    distance = speed * time;
+    
+    cout << setprecision(2) << fixed;
+    cout << "Hour " << setw(20) << "Distance Traveled" << endl;
+    cout <<"-------------------------------------------------------" << endl;
+    
+
 }
