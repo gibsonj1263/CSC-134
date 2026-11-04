@@ -206,22 +206,4 @@ void question4() {
 }
 void question5() {
     cout << "Welcome to the Distance Traveled Calculator Program" << endl;
-    cout << "-----------------------------------------------------" << endl;
-    // Variables 
-    int speed, time, distance;
-
-    // ask user for speed and time
-    cout << "What is the speed of the vehicle in mph? ";
-    cin >> speed;
-    cout << "How many hours has it traveled? ";
-    cin >> time;
-
-    // calculation for distance
-    distance = speed * time;
-    
-    cout << setprecision(2) << fixed;
-    cout << "Hour " << setw(20) << "Distance Traveled" << endl;
-    cout <<"-------------------------------------------------------" << endl;
-    
-
 }
