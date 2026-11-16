@@ -208,25 +208,34 @@ void question5() {
     cout << "Welcome to the Distance Traveled Calculator Program" << endl;
     cout << "-----------------------------------------------------" << endl;
     // variables
-    bool is_valid = false;
     int distance, speed, time;
+    bool is_valid = false;
 
-    // ask user for speed of vehicle (mph) and hours traveled and input validation
+    // ask user for speed, time and validate input
     while (is_valid == false) {
-    cout << "What is the speed of the vehicle in mph? ";
-    cin >> speed;
-    cout << "How many hours has it traveled? ";
-    cin >> time;    
-    if (time < 1) {
-        cout << "Number is too low." << endl;
-    }
-    else {
-        is_valid = true;
-    }
-    }
-    // calculation
-    distance = speed * time;
+        cout << "What is the speed of the vehicle in mph? ";
+        cin >> speed;
+        cout << "How many hours has it traveled? ";
+        cin >> time;
 
-    // Output: display results
-    
+        if (speed <= 0) {
+            cout << "Invalid input. Speed needs to be greater than 0." << endl;
+        }
+        else if (time <= 0) {
+            cout << "Invalid input. Time needs to be greater than 1." << endl;
+        }
+        else {
+            is_valid = true;
+        }
+    }
+
+    // Output: display the user's input
+    cout << setprecision(2) << fixed;
+    cout << "Hour" << "        " << "Distance Traveled" << endl;
+    cout << "-------------------------------------------" << endl;
+    for (int hour = 1; hour <= time; hour++) {
+        distance = speed * hour;
+        cout << setw(5) << hour << setw(15) << distance << endl;
+    }
+
 }
